@@ -1,0 +1,71 @@
+generator client {
+  provider      = "prisma-client"
+  output        = "../src/common/generated/prisma"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String @id @default(uuid())
+  email        String @unique @db.VarChar(255)
+  passwordHash String @map("password_hash") @db.VarChar(255)
+
+  columns  Column[]
+  cards    Card[]
+  comments Comment[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model Column {
+  id      String @id @default(uuid())
+  title   String @db.VarChar(255)
+  ownerId String @map("user_id")
+
+  owner User   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  cards Card[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("columns")
+}
+
+model Card {
+  id          String  @id @default(uuid())
+  title       String  @db.VarChar(255)
+  description String? @db.Text
+  ownerId     String  @map("user_id")
+  columnId    String  @map("column_id")
+
+  owner    User      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  column   Column    @relation(fields: [columnId], references: [id], onDelete: Cascade)
+  comments Comment[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("cards")
+}
+
+model Comment {
+  id      String @id @default(uuid())
+  text    String @db.Text
+  ownerId String @map("user_id")
+  cardId  String @map("card_id")
+
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  card  Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("comments")
+}

@@ -1,0 +1,1 @@
+export type EntityType = 'user' | 'column' | 'card' | 'comment';
