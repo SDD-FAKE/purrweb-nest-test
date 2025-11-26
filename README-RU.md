@@ -1,4 +1,4 @@
-###### [Переключиться на английский](https://github.com/SDD-FAKE/purrweb-nest-test/README.md)
+###### [Переключиться на английский](https://github.com/SDD-FAKE/purrweb-nest-test/blob/main/README.md)
 
 # Nest.js Тестовый Проект
 

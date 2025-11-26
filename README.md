@@ -1,4 +1,4 @@
-###### [Switch to Russian](https://github.com/SDD-FAKE/purrweb-nest-test/README-RU.md)
+###### [Switch to Russian](https://github.com/SDD-FAKE/purrweb-nest-test/blob/main/README-RU.md)
 
 # Nest.js Test Project
 
