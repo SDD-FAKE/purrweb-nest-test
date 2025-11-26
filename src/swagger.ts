@@ -25,7 +25,7 @@ Authentication:
 P.S. Watch this https://github.com/SDD-FAKE/purrweb-nest-test?tab=readme-ov-file#faq- to find answers to questions.
         `)
         .setVersion('1.0')
-        .addBearerAuth()
+        .addBearerAuth(undefined, 'JWT-auth')
         .build();
     const options = {
         customCss: theme.getBuffer(configService.get('swagger_theme') || SwaggerThemeNameEnum.CLASSIC),
