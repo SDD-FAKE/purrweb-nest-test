@@ -238,4 +238,4 @@ Use an external client (postman, insomnia or curl e.g.) to test refresh flows th
 
 Database diagram:
 - [dbdocs](https://dbdocs.io/danilove.sergey2016/purrweb-nest-test?view=relationships): https://dbdocs.io/danilove.sergey2016/purrweb-nest-test?view=relationships
-- [PDF/PNG export](https://github.com/SDD-FAKE/purrweb-nest-test/diagrams): https://github.com/SDD-FAKE/purrweb-nest-test/diagrams
+- [PDF/PNG export](https://github.com/SDD-FAKE/purrweb-nest-test/tree/main/diagrams): https://github.com/SDD-FAKE/purrweb-nest-test/tree/main/diagrams

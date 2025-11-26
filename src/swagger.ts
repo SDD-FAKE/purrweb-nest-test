@@ -22,7 +22,7 @@ Authentication:
 - Uses HTTP-only cookies for refresh tokens (automatically managed by browser. Not working in swagger - use e.g. Postman)
 - Refresh tokens are sent automatically with every request
 
-P.S. Watch this https://github.com/SDD-FAKE/purrweb-nest-test/?tab=readme-ov-file#faq- to find answers to questions.
+P.S. Watch this https://github.com/SDD-FAKE/purrweb-nest-test?tab=readme-ov-file#faq- to find answers to questions.
         `)
         .setVersion('1.0')
         .addBearerAuth()
